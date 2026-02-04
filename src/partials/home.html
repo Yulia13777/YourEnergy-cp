@@ -1,0 +1,77 @@
+<section class="home__content">
+  <div class="home__main">
+    <div class="home__text">
+      <h1 class="home__title">
+        <span class="home__title-decor">
+          <img src="/img/svg/sun.svg" alt="Sun" />
+        </span>
+        Get <span class="home__title-italic">Body</span> in <br />
+        shape, Stay healthy
+      </h1>
+      <p class="home__description">
+        Transform your physique and embrace a healthier lifestyle with our
+        comprehensive fitness and nutrition support.
+      </p>
+    </div>
+    <div class="home__sidebar">
+      <picture class="home__image-small">
+        <source
+          type="image/webp"
+          srcset="./img/thumb-168.webp 1x, ./img/thumb-336.webp 2x"
+        />
+        <img
+          src="./img/thumb-168.webp"
+          srcset="./img/thumb-168.jpg 1x, ./img/thumb-336.jpg 2x"
+          width="168"
+          height="100"
+          alt="Women exercising outdoors"
+        />
+      </picture>
+      <ul class="home__hashtags" id="js-home-hashtags">
+        <li class="home__hashtags-item">
+          <button class="home__hashtags-item-button" data-keyword="Sport">
+            #Sport
+          </button>
+        </li>
+        <li class="home__hashtags-item">
+          <button class="home__hashtags-item-button" data-keyword="Healthy">
+            #Healthy
+          </button>
+        </li>
+        <li class="home__hashtags-item">
+          <button class="home__hashtags-item-button" data-keyword="Workout">
+            #Workout
+          </button>
+        </li>
+        <li class="home__hashtags-item">
+          <button class="home__hashtags-item-button" data-keyword="Diet">
+            #Diet
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <picture class="home__hero">
+    <source
+      type="image/webp"
+      srcset="
+        ./img/home-main-mobile.webp  768w,
+        ./img/home-main-1800.webp   1800w,
+        ./img/home-main-3600.webp   3600w
+      "
+      sizes="(max-width: 768px) 100vw, 95vw"
+    />
+    <img
+      src="./img/home-main-1800.webp"
+      srcset="
+        ./img/home-main-mobile.webp  768w,
+        ./img/home-main-1800.webp   1800w,
+        ./img/home-main-3600.webp   3600w
+      "
+      sizes="(max-width: 768px) 100vw, 95vw"
+      width="1800"
+      alt="Abductors exercise"
+      fetchpriority="high"
+    />
+  </picture>
+</section>

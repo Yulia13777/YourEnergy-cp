@@ -1,0 +1,21 @@
+/*БАЗОВІ НАЛАШТУВАННЯ*/
+@use './fonts';
+@use './variables';
+@use './common';
+
+/*кОМПОНЕНТИ*/
+@use './header';
+@use './footer';
+
+/*СТОРІНКИ*/
+@use './home';
+@use './exercises';
+
+/*МОДАЛЬНІ ВІДКНА*/
+@use './exercise-modal';
+@use './rating-modal';
+
+/*ГЛОБАЛЬНІ*/
+@use './global-notification';
+
+@import 'modern-normalize/modern-normalize.css';

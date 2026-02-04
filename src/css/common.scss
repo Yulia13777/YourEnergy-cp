@@ -1,0 +1,37 @@
+body {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  padding: 0;
+  background-color: var(--color-light);
+  font-family: var(--font-family);
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.form-error {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: #ff4d4f;
+  min-height: 20px;
+  padding-left: var(--spacing-md);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  &--visible {
+    opacity: 1;
+  }
+}
