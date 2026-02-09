@@ -1,3 +1,6 @@
+import 'modern-normalize/modern-normalize.css';
+import './css/main.scss';
+
 import {
   loadExerciseCards,
   updateBreadcrumbs,
@@ -20,9 +23,7 @@ import { initFooterSubscription } from './js/email-validation.js';
 import { initHeader } from './js/header.js';
 import { displayQuote } from './js/quote.js';
 
-
 displayQuote();
-
 
 document.addEventListener('DOMContentLoaded', () => {
   initExerciseModal();
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   filterButtons.forEach(button => {
-    button.addEventListener('click', () => {      
+    button.addEventListener('click', () => {
       filterButtons.forEach(btn =>
         btn.classList.remove('exercises__content__header-filters-item--active')
       );
@@ -66,5 +67,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
       loadExerciseCards(filter, 1);
     });
-  });  
+  });
 });

@@ -9,6 +9,14 @@ let currentSearchKeyword = '';
 let currentMode = 'home';
 const ITEMS_PER_PAGE = 10;
 
+// Утиліти визначення ліміту карток
+function getItemsPerPage() {
+  const width = window.innerWidth;
+
+  if (width <= 768) return 9; // tablet
+  return 12; // desktop
+}
+
 // Утиліти для роботи із зображенням
 function createOptimizedImage(originalUrl, alt, className = '') {
   if (!originalUrl) return '';
@@ -156,14 +164,16 @@ function createExerciseItemCard(exercise) {
   return `
     <div class="exercises__content__main__cards-item exercises__content__main__cards-item--exercise" data-exercise-id="${exerciseId}">
       <div class="exercises__content__main__cards-item-header">
-        <button class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
-        <div class="exercises__content__main__cards-item-rating">
-          <span class="exercises__content__main__cards-item-rating-value">${rating.toFixed(
-            1
-          )}</span>
-          <svg class="exercises__content__main__cards-item-rating-star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 0L11.0206 6.21885L17.5595 6.21885L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885L6.97937 6.21885L9 0Z" fill="#EEA10C"/>
-          </svg>
+        <div class="exercises__content__main__cards-item-header-left">
+          <button class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
+          <div class="exercises__content__main__cards-item-rating">
+            <span class="exercises__content__main__cards-item-rating-value">${rating.toFixed(
+              1
+            )}</span>
+            <svg class="exercises__content__main__cards-item-rating-star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 0L11.0206 6.21885L17.5595 6.21885L12.2694 10.0623L14.2901 16.2812L9 12.4377L3.70993 16.2812L5.73056 10.0623L0.440492 6.21885L6.97937 6.21885L9 0Z" fill="#EEA10C"/>
+            </svg>
+          </div>
         </div>
         <button class="exercises__content__main__cards-item-start-btn">
           Start
@@ -447,7 +457,6 @@ export function loadExerciseCards(filter, page = 1) {
   currentPage = page;
 
   hideSearchField();
-
   const encodedFilter = encodeURIComponent(filter);
   const url = `https://your-energy.b.goit.study/api/filters?filter=${encodedFilter}&page=${page}`;
 

@@ -1,8 +1,8 @@
 .footer {
   width: 100%;
+  padding: 64px 0 16px 0;
   background-color: var(--color-dark);
   color: var(--color-light);
-  padding: 50px 10px 30px 10px;
   font-family: var(--font-family);
   overflow: hidden;
 
@@ -108,8 +108,16 @@
     }
   }
 
+  &__copyright-container {
+    display: flex;
+  }
+
+  &__copyright-decoration {
+    font-size: 14px;
+  }
+
   &__copyright {
-    margin-top: auto;
+    margin-right: 132px;
     font-size: 14px;
     opacity: 0.6;
 

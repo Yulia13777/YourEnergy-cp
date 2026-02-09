@@ -1,10 +1,12 @@
 // CSS Variables
-:root {  
+:root {
   --color-light: #f4f4f4;
   --color-dark: #242424;
-  
+  --color-gray-dark: rgba(36, 36, 36, 0.8);
+  --color-gray-light: rgba(36, 36, 36, 0.1);
+
   --color-block-light: #ffffff;
-  
+
   --font-family: 'DM Sans', sans-serif;
 
   --spacing-xs: 0.25rem;
