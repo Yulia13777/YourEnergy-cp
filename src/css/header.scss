@@ -1,28 +1,21 @@
 .header {
   margin-bottom: 96px;
+  padding-top: 28px;
 
   @media (max-width: 1439px) {
     margin-bottom: 100px;
+    padding-top: 24px;
   }
 
   @media (max-width: 767px) {
     margin-bottom: 80px;
+    padding-top: 20px;
   }
 
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 28px;
-    margin-bottom: 0;
-
-    @media (max-width: 1439px) {
-      padding-top: 24px;
-    }
-
-    @media (max-width: 767px) {
-      padding-top: 20px;
-    }
   }
 
   &__nav {
@@ -169,8 +162,8 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 100vh;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   background-color: var(--color-dark);
   z-index: 1000;
   transition: right 0.3s ease;

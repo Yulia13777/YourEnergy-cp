@@ -1,13 +1,13 @@
 /**
- * Form validation utilities module
- * Provides reusable functions for form field validation and error display
+ * Модуль утиліт для валідації форм
+ * Надає повторно використовувані функції для перевірки полів форми та відображення помилок
  */
 
 /**
  * Показує повідомлення про помилку для поля форми
- * @param {HTMLElement} inputElement - The input/textarea element
- * @param {HTMLElement} errorElement - The element to display error message
- * @param {string} message - The error message to display
+ * @param {HTMLElement} inputElement - Елемент input/textarea
+ * @param {HTMLElement} errorElement - Елемент для відображення повідомлення про помилку
+ * @param {string} message - Текст повідомлення про помилку
  */
 export function showFieldError(inputElement, errorElement, message) {
   if (inputElement) {
@@ -29,9 +29,9 @@ export function showFieldError(inputElement, errorElement, message) {
 }
 
 /**
- * Hides the error message for a form field
- * @param {HTMLElement} inputElement - The input/textarea element
- * @param {HTMLElement} errorElement - The element displaying error message
+ * Приховує повідомлення про помилку для поля форми
+ * @param {HTMLElement} inputElement - Елемент input/textarea
+ * @param {HTMLElement} errorElement - Елемент, що відображає повідомлення про помилку
  */
 export function hideFieldError(inputElement, errorElement) {
   if (inputElement) {
@@ -50,9 +50,9 @@ export function hideFieldError(inputElement, errorElement) {
 }
 
 /**
- * Validates an email address
- * @param {string} email - The email address to validate
- * @returns {boolean} True if email is valid, false otherwise
+ * Перевіряє коректність електронної адреси
+ * @param {string} email - Електронна адреса для перевірки
+ * @returns {boolean} true, якщо електронна адреса коректна, інакше false
  */
 export function validateEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,9 +60,9 @@ export function validateEmail(email) {
 }
 
 /**
- * Validates that a field is not empty
- * @param {string} value - The value to validate
- * @returns {boolean} True if value is not empty, false otherwise
+ * Перевіряє, що поле не є порожнім
+ * @param {string} value - Значення для перевірки
+ * @returns {boolean} true, якщо значення не порожнє, інакше false
  */
 export function validateRequired(value) {
   return value.trim().length > 0;

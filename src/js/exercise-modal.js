@@ -11,6 +11,8 @@ function closeExerciseModal() {
   if (!modal) return;
 
   modal.classList.remove('exercise-modal--open');
+  modal.classList.remove('exercise-modal--hidden');
+
   document.body.style.overflow = '';
 }
 
@@ -21,6 +23,7 @@ export function openExerciseModal(exerciseId) {
   currentExerciseIdForRating = exerciseId;
 
   modal.classList.add('exercise-modal--open');
+  modal.classList.remove('exercise-modal--hidden');
   document.body.style.overflow = 'hidden';
 
   // Отримання елементів DOM
@@ -102,7 +105,9 @@ export function openExerciseModal(exerciseId) {
         ratingBtn.parentNode.replaceChild(newRatingBtn, ratingBtn);
 
         newRatingBtn.addEventListener('click', () => {
-          closeExerciseModal();
+          const exerciseModal = document.getElementById('js-exercise-modal');
+          exerciseModal?.classList.add('exercise-modal--hidden');
+
           openRatingModal(exerciseId);
         });
       }
@@ -127,7 +132,7 @@ function updateFavoriteButton(exerciseId) {
 
   if (isInFavorites) {
     favoriteBtn.classList.add('active');
-    if (btnText) btnText.textContent = 'Remove from favorites';
+    if (btnText) btnText.textContent = 'Remove from';
     if (btnIcon) {
       btnIcon.setAttribute('fill', 'currentColor');
       btnIcon.removeAttribute('stroke');

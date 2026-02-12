@@ -42,14 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFooterSubscription();
 
   loadExerciseCards('Muscles', 1);
-  /*const page = getPageFromURL();
-
-  if (page === 'home') {
-    loadExerciseCards('Muscles', 1);
-  } else if (page === 'favorites') {
-    switchToFavorites(); // Завантажує тільки фаворіти
-  }*/
-  // !!!!!
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {

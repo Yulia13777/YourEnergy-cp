@@ -43,13 +43,22 @@ function hideServerMessage() {
 
 // Керування модальним вікном
 function closeRatingModal() {
-  const modal = document.getElementById('js-rating-modal');
-  if (!modal) return;
+  const ratingModal = document.getElementById('js-rating-modal');
+  if (!ratingModal) return;
 
-  modal.classList.remove('rating-modal--open');
-  document.body.style.overflow = '';
+  // 1. Закриваємо ТІЛЬКИ rating modal
+  ratingModal.classList.remove('rating-modal--open');
+
+  // 2. Показуємо назад exercise modal
+  const exerciseModal = document.getElementById('js-exercise-modal');
+  exerciseModal?.classList.remove('exercise-modal--hidden');
+
+  // 3. Scroll: exercise modal ще відкрита
+  document.body.style.overflow = 'hidden';
+
   currentExerciseIdForRating = null;
 
+  // 4. Очистка стану форми
   const emailInput = document.getElementById('js-rating-modal-email');
   const emailError = document.getElementById('js-email-error');
   const commentTextarea = document.getElementById('js-rating-modal-comment');
@@ -66,6 +75,7 @@ export function openRatingModal(exerciseId) {
   const modal = document.getElementById('js-rating-modal');
   if (!modal) return;
 
+  modal.classList.add('rating-modal--open');
   currentExerciseIdForRating = exerciseId;
 
   // Отримання елементів форми

@@ -211,15 +211,15 @@
 
   &__error,
   &__rating-error {
-    max-height: 0; // елемент не займає місце
-    opacity: 0; // повністю прозорий
-    overflow: hidden; // приховує текст
-    padding: 0; // прибираємо внутрішні відступи
-    margin: 0; // прибираємо зовнішні відступи
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
     font-family: var(--font-family);
     font-size: 14px;
     color: #ff4d4f;
-    text-align: left; // для рейтингу можна окремо вирівнювати
+    text-align: left;
     transition:
       max-height 0.3s ease,
       opacity 0.3s ease,
@@ -227,14 +227,14 @@
       padding 0.3s ease;
 
     &.form-error--visible {
-      max-height: 40px; // висота під один рядок тексту
+      max-height: 40px;
       opacity: 1;
     }
   }
 
   &__rating-error {
-    text-align: center; // специфічно для рейтингу
-    padding-left: 0; // прибираємо лівий відступ
+    text-align: center;
+    padding-left: 0;
   }
 
   &__input,

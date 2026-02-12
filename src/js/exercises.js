@@ -12,14 +12,14 @@ let currentMode = 'home';
 function getCategoriesLimit() {
   const width = window.innerWidth;
 
-  if (width <= 768) return 9; // mobile
+  if (width <= 767) return 9; // mobile
   return 12; // desktop
 }
 
 function getExercisesLimit() {
   const width = window.innerWidth;
 
-  if (width <= 768) return 8; // mobile
+  if (width <= 767) return 8; // mobile
   return 10; // desktop
 }
 
@@ -74,28 +74,45 @@ export function initCardsEventListener() {
     '.exercises__content__main__cards'
   );
 
-  if (!cardsContainer) {
-    return;
-  }
+  if (!cardsContainer) return;
 
   cardsContainer.addEventListener('click', event => {
-    const card = event.target.closest('.exercises__content__main__cards-item');
+    const startBtn = event.target.closest(
+      '.exercises__content__main__cards-item-start-btn'
+    );
 
-    if (!card) {
-      return;
-    }
+    if (startBtn) {
+      const exerciseCard = startBtn.closest(
+        '.exercises__content__main__cards-item--exercise'
+      );
 
-    const categoryName = card.getAttribute('data-category-name');
-    if (categoryName) {
-      loadExercisesByCategory(categoryName);
-      return;
-    }
+      if (!exerciseCard) return;
 
-    const exerciseId = card.getAttribute('data-exercise-id');
-    if (exerciseId) {
+      const exerciseId = exerciseCard.dataset.exerciseId;
+      if (!exerciseId) return;
+
       openExerciseModal(exerciseId);
       return;
     }
+
+    const categoryCard = event.target.closest(
+      '.exercises__content__main__cards-item'
+    );
+
+    if (!categoryCard) return;
+
+    if (
+      categoryCard.classList.contains(
+        'exercises__content__main__cards-item--exercise'
+      )
+    ) {
+      return;
+    }
+
+    const categoryName = categoryCard.dataset.categoryName;
+    if (!categoryName) return;
+
+    loadExercisesByCategory(categoryName);
   });
 }
 
@@ -611,6 +628,7 @@ function renderFavoritesEmptyState() {
 
 export function loadFavoritesExercises(page = 1) {
   currentPage = page;
+
   const favoriteIds = getFavorites();
   const limit = getExercisesLimit();
 
