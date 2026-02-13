@@ -19,10 +19,10 @@
       </div>
     </div>
   `}function we(e){const t=e.rating||0,n=e.burnedCalories||0,s=e.time||0,r=e.bodyPart||"",o=e.target||"";return`
-    <div class="exercises__content__main__cards-item exercises__content__main__cards-item--exercise" data-exercise-id="${e._id||""}">
+    <li class="exercises__content__main__cards-item exercises__content__main__cards-item--exercise" data-exercise-id="${e._id||""}">
       <div class="exercises__content__main__cards-item-header">
         <div class="exercises__content__main__cards-item-header-left">
-          <button class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
+          <button disabled class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
           <div class="exercises__content__main__cards-item-rating">
             <span class="exercises__content__main__cards-item-rating-value">${t.toFixed(1)}</span>
             <svg class="exercises__content__main__cards-item-rating-star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
           <span class="exercises__content__main__cards-item-info-value">${o}</span>
         </div>
       </div>
-    </div>
+    </li>
   `}function Se(e){const t=document.querySelector(".exercises__content__main__cards");t&&(t.classList.remove("exercises__content__main__cards--exercises"),t.innerHTML="",e.forEach(n=>{const s=Be(n);t.insertAdjacentHTML("beforeend",s)}))}function ae(e){const t=document.querySelector(".exercises__content__main__cards");t&&(t.classList.add("exercises__content__main__cards--exercises"),t.innerHTML="",e.forEach(n=>{const s=we(n);t.insertAdjacentHTML("beforeend",s)}))}function je(){const e=document.querySelector(".exercises__content__main__cards");if(!e)return;e.classList.add("exercises__content__main__cards--exercises"),e.innerHTML="",e.insertAdjacentHTML("beforeend",`
     <div class="exercises__content__main__empty-state">
       <p class="exercises__content__main__empty-state-text">
