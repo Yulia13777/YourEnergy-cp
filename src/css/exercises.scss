@@ -424,7 +424,6 @@
         border-radius: 20px;
         overflow: hidden;
         aspect-ratio: 1;
-        cursor: pointer;
         transition: transform 0.3s ease-out;
 
         &:hover {
@@ -514,13 +513,6 @@
           font-size: 12px;
           font-weight: 400;
           color: var(--color-dark);
-          cursor: pointer;
-          transition: all 0.2s ease;
-
-          &:hover {
-            background-color: var(--color-dark);
-            color: var(--color-light);
-          }
         }
 
         &-rating {
@@ -600,13 +592,9 @@
           color: var(--color-dark);
           margin: 0;
           line-height: 1.2;
-
-          @media (max-width: 1439px) {
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           @media (max-width: 480px) {
             font-size: 20px;
@@ -630,7 +618,11 @@
           display: flex;
           flex-wrap: wrap;
           gap: 4px;
-
+          display: inline-block;
+          max-width: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           &-label {
             color: var(--color-dark);
             opacity: 0.6;

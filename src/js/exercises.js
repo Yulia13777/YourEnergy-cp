@@ -185,10 +185,10 @@ function createExerciseItemCard(exercise) {
   const exerciseId = exercise._id || '';
 
   return `
-    <div class="exercises__content__main__cards-item exercises__content__main__cards-item--exercise" data-exercise-id="${exerciseId}">
+    <li class="exercises__content__main__cards-item exercises__content__main__cards-item--exercise" data-exercise-id="${exerciseId}">
       <div class="exercises__content__main__cards-item-header">
         <div class="exercises__content__main__cards-item-header-left">
-          <button class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
+          <button disabled class="exercises__content__main__cards-item-workout-btn">WORKOUT</button>
           <div class="exercises__content__main__cards-item-rating">
             <span class="exercises__content__main__cards-item-rating-value">${rating.toFixed(
               1
@@ -232,7 +232,7 @@ function createExerciseItemCard(exercise) {
           <span class="exercises__content__main__cards-item-info-value">${target}</span>
         </div>
       </div>
-    </div>
+    </li>
   `;
 }
 
